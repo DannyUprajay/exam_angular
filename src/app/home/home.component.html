@@ -1,0 +1,111 @@
+<nav style="" class="navbar navbar-expand-lg navbar-light p-3">
+  <div class="container-fluid">
+    <a class="logo navbar-brand text-black" href="#">Solde <span style="color: rebeccapurple"> BANK</span></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class=" collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav ms-auto ">
+        <li class="nav-item" >
+          <a class="nav-link mx-2" aria-current="page" routerLink="">Home</a>
+        </li>
+        <li class="nav-item"  >
+          <a class="nav-link mx-2" >Votre solde</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav ms-auto d-none d-lg-inline-flex">
+        <li class="nav-item mx-2">
+          <a>
+            <img class="rounded-circle" style="width: 100px; height: 100px; object-fit: cover" src="https://i.pinimg.com/564x/6b/38/63/6b38637f9b160ae2a2d1293e988722e5.jpg" alt="">
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<hr>
+
+<div class="container mt-5 ">
+  <div class="row">
+    <div class="col-8">
+      <div class="home_content">
+        <h1>Welcome back <br> <span style="color: rebeccapurple">Danny</span> <br> Votre argent est en <br> sécurité avec nous ! 🤑 </h1>
+      </div>
+    </div>
+    <div class="col-4">
+      <img class="img_home" src="https://img.freepik.com/premium-photo/3d-bank-icon-with-money-stack-coins-banknotes-bagmoney-online-banking-moneysaving-bank-finance-financial-business-public-finance-money-transaction-savings-concept-3d-render-illustration_473922-681.jpg" alt="">
+    </div>
+  </div>
+</div>
+
+
+<div class="container">
+  <h1 class="=text-center">Votre solde: {{solde}}€</h1>
+<div class="text-center mb-5">
+  <button type="button" class="btn btn-primary mt-5" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    Ajoutez une transaction
+  </button>
+</div>
+
+  <div class="modal fade text-center" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5 mx-auto w-25" id="exampleModalLabel">Transaction</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <form class="container" [formGroup]="form" (ngSubmit)="onSubmit()">
+
+          <div class="col">
+                <label class="form-label">Label</label>
+                <input type="text"  formControlName="label" required>
+      </div>
+          <div class="col">
+                <label class="form-label">Montant</label>
+                <input type="number"  formControlName="montant" required>
+    </div>
+          <div class="col">
+              <label for="pet-select">Categorie</label>
+              <select formControlName="categorie" id="pet-select" required>
+                <option >--Please choose an option--</option>
+                <option value="depense">Dépense</option>
+                <option value="entree">Entrée</option>
+              </select>
+  </div>
+          <button type="submit" [disabled]="!form.valid">Valider</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+<table class="table container">
+  <thead>
+  <tr>
+    <th class="table-success" scope="col">date</th>
+    <th class="table-warning" scope="col">label</th>
+    <th class="table-info"  scope="col">Montant</th>
+    <th class="{{montant_color}}" scope="col">Type</th>
+  </tr>
+  </thead>
+
+  <tbody *ngFor="let item of listTransaction">
+  <tr>
+    <th class="table-success" scope="row">{{item.date | date }} </th>
+    <td class="table-warning">{{item.label}}</td>
+    <td class="table-info" >{{item.montant}}</td>
+
+    <td class="{{montant_color}}">{{item.categorie}}</td>
+    <td>
+  </tr>
+  </tbody>
+</table>
+<img style="width: 300px; margin-left: 150px;" src="{{message}}" alt="" srcset="">
+<!--<img src="https://www.quizz.biz/uploads/quizz/1784208/orig/1.jpg?1691438437" alt="" srcset="">-->
+
+
+</div>
+
+

@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rubik:wght@500&display=swap');
+
+
+.logo{
+  font-size: 1.5rem;
+}
+
+nav a{
+  color: black;
+  font-family: 'Rubik', sans-serif;
+}
+
+nav ul a:hover{
+  color: grey;
+  transition: 0.5s;
+  text-decoration: underline grey;
+}
+.active{
+  color: grey;
+  text-decoration: underline grey;
+}
+
+hr{
+  color: black;
+  width: 80%;
+  height: 12px;
+  margin: 0 auto;
+  border-top: 4px solid black;
+}
+
+.row {
+  height: 90vh;
+}
+
+.home_content {
+  text-align: center;
+  position: relative;
+  top: 15%;
+
+}
+.home_content h1{
+  font-family: 'Rubik', sans-serif;
+  font-size: 4rem;
+  text-align: justify;
+  text-justify: inter-word;
+  margin-left: 8%;
+  color: black;
+}
+
+.home_content p {
+  text-align: justify;
+  margin-left: 9%;
+  color: black;
+}
+.home_content button{
+  background-color: dimgrey;
+  color: white;
+  font-family: 'Rubik', sans-serif;
+  width: 30rem;
+  height: 7rem;
+  font-size: 1.2rem;
+  margin-top: 30px;
+  margin-right: 80px;
+  box-shadow: 5px 11px 5px 0px #54b068;
+  -webkit-box-shadow: 5px 11px 5px 0px #54b068;
+  -moz-box-shadow: 5px 11px 5px 0px #54b068;
+}
+
+.home_content button:hover {
+  background-color: gainsboro;
+  color: black;
+  transition: 1s;
+  font-family: 'Rubik', sans-serif;
+  width: 30rem;
+  height: 7rem;
+  font-size: 1.2rem;
+  margin-top: 30px;
+  box-shadow: 5px 11px 5px 0px #54b068;
+  -webkit-box-shadow: 5px 11px 5px 0px #54b068;
+  -moz-box-shadow: 5px 11px 5px 0px #54b068;
+}
+
+.img_home {
+  width: 500px;
+  height: 600px;
+  object-fit:contain;
+}
